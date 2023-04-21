@@ -2,11 +2,15 @@
 Module containing general utilities
 in addition to large formatted text segments
 """
+import os
 
-# def clear():
-# """
-# Clearing the terminal to reduce information amount
-# """
+
+def clear():
+    """
+    Clearing the terminal to reduce
+    information amount
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 # encouragement_choices = []

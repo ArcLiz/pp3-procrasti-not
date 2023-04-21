@@ -2,8 +2,8 @@
 All functions that controls task management,
 e.g. vieweing, adding, removing, updating and doing tasks
 """
-# from utilities import MANAGER_HEADER, MANAGER_EMPTY, MAIN_MENU, EDIT_HEADER
-from utilities import clear
+# from utilities import MANAGER_HEADER, MANAGER_EMPTY, encouragement_choices
+from utilities import clear, MAIN_MENU, EDIT_HEADER
 
 todo_list = []
 # completed_tasks = []
@@ -16,7 +16,7 @@ def setup_menu():
     """
     global todo_list
     first_time = True
-    menu_text = """Some big fancy text box
+    menu_text = f"""{MAIN_MENU}
 
 Choose from the below alternatives:
 1. View, Edit or Delete tasks in my list
@@ -63,7 +63,7 @@ def edit_tasks():
 
     while True:
         # Print the current list
-        print("BIG BOX TEXT")
+        print(EDIT_HEADER)
         for i, task in enumerate(todo_list):
             print(f"{i+1}. {task}")
 
@@ -91,13 +91,13 @@ delete (0 to exit):\n> """)) - 1
             new_task = input("Enter the new task:\n> ")
             todo_list[index] = new_task
             clear()
-            print("BIG BOX TEXT")
+            print(EDIT_HEADER)
             print(f"Task {index+1} updated.")
         elif action == 'd':
             # Delete the task
             del todo_list[index]
             clear()
-            print("BIG BOX TEXT")
+            print(EDIT_HEADER)
             print(f"Task {index+1} deleted.")
         else:
             print("Invalid input, please try again.")

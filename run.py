@@ -45,7 +45,28 @@ def display_handbook():
     clear()
 
     print("""
-Long block text of How the app works
+ ___________________________________________________________________
+|                                                                   |
+|            A Beginners Guide to Sir Procrasti-Not                 |
+|                                                                   |
+|   Have you ever had one of those days where you have so many      |
+|   things on your to do list, that you end up not doing a single   |
+|   one? I know that I have. Sir Procrasti-Not is here to help.     |
+|                                                                   |
+|   It's all super simple. Just;                                    |
+|   1. Add your planned tasks to your To Do list                    |
+|   2. Start ticking of items on your list!                         |
+|                                                                   |
+|   Sir Procrasti-Not will randomly chose a task from your list     |
+|   that you are to complete, before moving on. When you're         |
+|   finished with the decided on task, Sir Procrasti-Not will be    |
+|   the one cheering you on to keep going!                          |
+|                                                                   |
+|   And who knows, maybe he has a few wise words to share, to       |
+|   keep your spirits up throughout the day.                        |
+|                                                                   |
+|                           Good Luck!                              |
+|___________________________________________________________________|
 """)
     input("Press enter to begin..")
     clear()

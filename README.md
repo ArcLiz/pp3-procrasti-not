@@ -69,3 +69,104 @@ Below you'll find screenshots of the mockup layouts.
 
 #### Chromatics
 Potential. WIP.
+
+
+## Features
+Names, screenshots and descriptions of all the features.
+### Project Wide Features
+e.g. Logo, Navigation Menu, Footer
+### Features per page (if relevant)
+e.g. Contact Form, About Section, Gallery
+
+## Future Enhancements
+List of any features that should, could or might be implemented in the future.
+* Name of Feature
+  * Description of Feature and reason for why it might be added
+
+## Testing
+Documentation of all tests that has been done on the project.
+### Feature Testing
+![Excel Sheet of Tests](link/to/image)
+
+### Validator Testing
+* Python Checker - The python code was evaluated u
+  * Outcome ![View Image of Report](link/to/image)
+
+
+### Notable Bugs
+#### Reported - Solved
+* Item 1
+* Item 2
+* Item 3
+
+#### Reported - Not Solved
+* Item 1
+* Item 2
+* Item 3
+
+## Deployment
+
+The project was deployed using Heroku. The steps to deploy are as follows:
+
+*Heroku Deployment - Project Creation and Settings*<br>
+1. Sign up or Log in to [Heroku](https://heroku.com/)
+2. Once in your dashboard, select "New" and then "Create New App"
+3. Give your project a name (must be unique), select your region and confirm "create app"<br>
+
+You'll now be taken to the Heroku Deployment Tab. In order to use the Code Institute mock terminal template for your deployed project, you'll need to do the following:
+
+4. Navigate to the "Settings" tab
+5. Click "Reveal Config Vars" to add a configuration variable with Key: **PORT** and Value: **8000**
+6. Click "Add Buildpack" and add the packs **Python** and **NodeJS**
+    * *Note that the order of added buildpacks have meaning. In this case, Python should be the first (top) and NodeJS second (bottom)*
+
+*Heroku Deployment - Deploying a Github Repository*<br>
+1. Navigate to the "Deployment" tab
+2. Select "GitHub - Connect" under Deployment method and follow the steps necessary to connect your GitHub account
+3. Select your GitHub account from the droplist, enter your repository name and click search
+4. Choose "Connect" at the correct repository to connect the repo to your Heroku app
+5. Further down on the Deployment page, you'll find "Automatic deploys" and "Manual deploy"
+    * For automatic, choose the branch you wish to deploy and click "Enable Automatic Deploys".<br> This allows Heroku to automatically rebuild your app when your Github repository is updated
+    * For manual, choose the branch you wish to deploy and click "Deploy Branch"
+6. Once Heroku is finished with the build process you will be notified with a "Your App Was Successfully Deployed" message and a link to the app
+
+*Forking the GitHub Repository*<br>
+
+If you wish to make a copy of the repository to your own GitHub account, you can do so by "Forking" it.<br>
+This will give you a full working copy of the project, but ensures that no changes you make affect the original repository.
+1. Navigate to the GitHub repository while logged into your account
+2. In your top right, click the Fork button
+3. Chose the name you want to give your version of the repository *(automatically filled in as the original project name)*
+4. Click the green "Create fork" button
+
+*Cloning the GitHub Repository*<br>
+
+If you wish to download a local version of the repository to be worked on, you can do that too. That is referred to as "Cloning".<br>
+The steps to cloning the repository are as follows:
+1. Navigate to the GitHub repository while logged into your account
+2. Click the <>Code dropdown button
+3. Make sure that HTTPS is chosen, then copy the repository link to the clipboard<br>
+*Git must be installed for the next steps to work*<br>
+4. Open the IDE you're working in
+5. Type "git clone (the url link you just copied)" into the terminal
+
+The project will now be on your local machine to use or save. This can be a good way to back up versions of your own work too.
+
+## Credits
+
+### Utilised Libraries
+
+- Built in - **os**
+- Built in - **sys**
+- Built in - **time**
+- Built in - **random**
+
+### Code
+* Item 1
+* Item 2
+* Item 3
+
+### Acknowledgements
+Individuals worthy of special mention.
+* Person 1 - For...
+* Person 2 - For...

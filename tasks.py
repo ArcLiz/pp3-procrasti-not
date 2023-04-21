@@ -72,9 +72,15 @@ def edit_tasks():
             print(f"{i+1}. {task}")
 
         # Ask the user which index to edit or delete
-        index = int(input("""
+        try:
+            index = int(input("""
 Enter the index of the task you want to edit or
 delete (0 to exit):\n> """)) - 1
+        except ValueError:
+            print("Invalid input, please enter a valid index.")
+            time.sleep(2)
+            clear()
+            continue
 
         # Exit if the user enters 0
         if index == -1:

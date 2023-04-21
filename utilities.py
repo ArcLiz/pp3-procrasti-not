@@ -65,6 +65,17 @@ EDIT_HEADER = """
 |___________________________________________________________________|
 """
 
+
+COMPLETED_HEADER = """
+ ___________________________________________________________________
+|                                                                   |
+|            Congratulations on completing your tasks!              |
+|                                                                   |
+|   You've been a complete champion throughout these tasks,         |
+|   Let me tell you!                                                |
+|___________________________________________________________________|
+"""
+
 encouragement_choices = [
     "Great job!",
     "Wow, you're killing it!",

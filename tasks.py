@@ -4,9 +4,10 @@ e.g. vieweing, adding, removing, updating and doing tasks
 """
 import time
 import random
+import sys
 
 from utilities import MANAGER_HEADER, MANAGER_EMPTY, encouragement_choices
-from utilities import clear, MAIN_MENU, EDIT_HEADER
+from utilities import clear, MAIN_MENU, EDIT_HEADER, COMPLETED_HEADER
 
 todo_list = []
 completed_tasks = []
@@ -169,14 +170,38 @@ Let's see what your next task is...""")
                 time.sleep(2)
             else:
                 clear()
-                print("Here lies tasks_complete()")
+                tasks_complete()
                 break
         else:
             print("---STILL A WORK IN PROGRESS---")
 
 
-# def tasks_complete():
-# """
-# The final "screen", congratulating the user on finishing their list.
-# Giving options to quit app or restart to set up a new list.
-# """
+def tasks_complete():
+    """
+    The final "screen", congratulating the user on finishing their list.
+    Giving options to quit app or restart to set up a new list.
+    """
+    global completed_tasks
+
+    print(COMPLETED_HEADER)
+    print("You managed to complete all of these tasks:\n")
+    for i, task in enumerate(completed_tasks):
+        print(f"{i+1}. {task}")
+
+    print("\nYou should be as proud of yourself as I am.")
+
+    while True:
+        up_next = input("""
+Now, would you like to set up a new To Do list? (y/n)\n> """).lower() == "y"
+
+        if up_next:
+            completed_tasks = []
+            clear()
+            setup_menu()
+            break
+        else:
+            print("Goodbye!")
+            time.sleep(3)
+            clear()
+            sys.exit(0)
+    return

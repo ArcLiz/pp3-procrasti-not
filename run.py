@@ -3,7 +3,7 @@ Main module including an initial welcome function,
 the user handbook and the main().
 """
 from utilities import clear
-# from tasks import setup_menu
+from tasks import setup_menu
 
 
 def welcome():
@@ -34,8 +34,7 @@ before we start setting up your To Do list? (y/n)\n> """).lower()
         else:
             print("Invalid input, please enter 'y' or 'n\n> ")
 
-    # should go to setup_menu()
-    print("Testing functionality")
+    setup_menu()
 
 
 def display_handbook():
@@ -70,8 +69,7 @@ def display_handbook():
 """)
     input("Press enter to begin..")
     clear()
-    # Should go to setup_menu() in time
-    print("Test Test")
+    setup_menu()
 
 
 def main():

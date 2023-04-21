@@ -2,7 +2,7 @@
 Main module including an initial welcome function,
 the user handbook and the main().
 """
-# from utilities import clear
+from utilities import clear
 # from tasks import setup_menu
 
 
@@ -13,10 +13,19 @@ the user handbook and the main().
 # """
 
 
-# def display_handbook():
-# """
-# A detailed explanation on how the app works.
-# """
+def display_handbook():
+    """
+    A detailed explanation on how the app works.
+    """
+    clear()
+
+    print("""
+Long block text of How the app works
+""")
+    input("Press enter to begin..")
+    clear()
+    # Should go to setup_menu() in time
+    print("I work, for now")
 
 
 # def main():

@@ -1,3 +1,25 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+"""
+Main module including an initial welcome function,
+the user handbook and the main().
+"""
+# from utilities import clear
+# from tasks import setup_menu
+
+
+# def welcome():
+# """
+# Welcoming the user to the app, offering further
+# information or a way to begin list setup.
+# """
+
+
+# def display_handbook():
+# """
+# A detailed explanation on how the app works.
+# """
+
+
+# def main():
+# """
+# The main function controlling how the app runs.
+# """

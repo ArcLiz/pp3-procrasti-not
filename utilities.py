@@ -1,6 +1,6 @@
 """
-Module containing general utilities
-in addition to large formatted text segments
+The function that welcomes the user
+and presents the user with a quick app introduction
 """
 import os
 
@@ -12,8 +12,6 @@ def clear():
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
-# encouragement_choices = []
 
 MAIN_MENU = """
  ___________________________________________________________________
@@ -31,9 +29,30 @@ MAIN_MENU = """
 """
 
 
-# MANAGER_HEADER = """Boxed text"""
+MANAGER_HEADER = """
+ ___________________________________________________________________
+|                                                                   |
+|                    Hocus Pocus, give us Focus!                    |
+|                                                                   |
+|   Welcome to the Task Managing, the job for which I was created.  |
+|                                                                   |
+|   We shall now begin with choosing one of your tasks, at random.  |
+|   Once you've completed your task, I will choose another one.     |
+|                                                                   |
+|   When all the tasks are done, we'll be celebrating together.     |
+|___________________________________________________________________|
+"""
 
-# MANAGER_EMPTY = """Boxed text"""
+
+MANAGER_EMPTY = """
+ ___________________________________________________________________
+|                                                                   |
+|                    Something went wrong!                          |
+|                                                                   |
+|   It seems you have yet to add items to your To Do list.          |
+|___________________________________________________________________|
+"""
+
 
 EDIT_HEADER = """
  ___________________________________________________________________
@@ -45,3 +64,9 @@ EDIT_HEADER = """
 |   Your current To Do list and all it's functions are shown below. |
 |___________________________________________________________________|
 """
+
+encouragement_choices = [
+    "Great job!",
+    "Wow, you're killing it!",
+    "Yees, let's go!",
+    "Give that maaan a cookie!"]

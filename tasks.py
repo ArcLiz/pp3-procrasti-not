@@ -2,11 +2,14 @@
 All functions that controls task management,
 e.g. vieweing, adding, removing, updating and doing tasks
 """
-# from utilities import MANAGER_HEADER, MANAGER_EMPTY, encouragement_choices
+import time
+import random
+
+from utilities import MANAGER_HEADER, MANAGER_EMPTY, encouragement_choices
 from utilities import clear, MAIN_MENU, EDIT_HEADER
 
 todo_list = []
-# completed_tasks = []
+completed_tasks = []
 
 
 def setup_menu():
@@ -43,8 +46,7 @@ Add a new task below or chose from the alternatives above to proceed.""")
 
         elif action == '2':
             clear()
-            # to task_manager()
-            print("Testing task manager location")
+            task_manager()
 
         else:
             todo_list.append(action)
@@ -57,7 +59,7 @@ Add a new task below or chose from the alternatives above to proceed.""")
 
 def edit_tasks():
     """
-    Function to manage tasks in the todo_list global variable
+    The menu in which users can edit or delete tasks from their list.
     """
     global todo_list
 
@@ -119,11 +121,58 @@ delete (0 to exit):\n> """)) - 1
             break
 
 
-# def task_manager():
-# """
-# The main task managing function incl. randomizing tasks,
-# completion counter and cheering on the user.
-# """
+def task_manager():
+    """
+    The main task managing function incl. randomizing tasks,
+    completion counter and cheering on the user.
+    """
+    global todo_list
+    global completed_tasks
+    print(f"""{MANAGER_HEADER}
+
+The task chosen is....""")
+    while True:
+        # Chosing a random task
+        time.sleep(2)
+        if todo_list:
+            next_task = random.choice(todo_list)
+
+            print(f"""\n{next_task}\n
+Once done, you have {len(todo_list)-1} tasks left to complete.\n""")
+        else:
+            clear()
+            print(MANAGER_EMPTY)
+            input("""In order to start working through your To do list,
+you'll need to go back to my main menu and start adding tasks.
+
+Press enter to go back and setup your To Do list.""")
+            clear()
+            setup_menu()
+            break
+
+        # Mark a task as completed and add to completed_list
+        completed = input("Have you completed this task? (y/n)\n> ").lower()
+
+        if completed == "y":
+            todo_list.remove(next_task)
+            completed_tasks.append(next_task)
+            clear()
+            encouragement = random.choice(encouragement_choices)
+            print(MANAGER_HEADER)
+
+            if len(todo_list) != 0:
+                print(f"""{encouragement}
+
+You're doing really great.
+
+Let's see what your next task is...""")
+                time.sleep(2)
+            else:
+                clear()
+                print("Here lies tasks_complete()")
+                break
+        else:
+            print("---STILL A WORK IN PROGRESS---")
 
 
 # def tasks_complete():

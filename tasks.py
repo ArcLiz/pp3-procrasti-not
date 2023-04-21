@@ -8,6 +8,7 @@ import sys
 
 from utilities import MANAGER_HEADER, MANAGER_EMPTY, encouragement_choices
 from utilities import clear, MAIN_MENU, EDIT_HEADER, COMPLETED_HEADER
+from utilities import MANAGER_ENCOURAGE
 
 todo_list = []
 completed_tasks = []
@@ -129,12 +130,12 @@ def task_manager():
     """
     global todo_list
     global completed_tasks
-    print(f"""{MANAGER_HEADER}
+
+    while True:
+        print(f"""{MANAGER_HEADER}
 
 The task chosen is....""")
-    while True:
         # Chosing a random task
-        time.sleep(2)
         if todo_list:
             next_task = random.choice(todo_list)
 
@@ -167,13 +168,62 @@ Press enter to go back and setup your To Do list.""")
 You're doing really great.
 
 Let's see what your next task is...""")
-                time.sleep(2)
+                time.sleep(3)
             else:
                 clear()
                 tasks_complete()
                 break
+        if completed == "n":
+            while True:
+                clear()
+                print(MANAGER_ENCOURAGE)
+                print("""
+Oof, come on my friend!
+You can do it, I'm completely sure of it.
+
+All I can offer at this point are these alternatives
+
+1. Temporarily skip this task (shuffle new)
+2. Permanently skip this task (delete)
+3. Quit ProcrastiNot
+
+Which one suits you best?""")
+                
+                choice = input("> ")
+                if choice == "1":
+                    random.shuffle(todo_list)
+                    next_task = todo_list[0]
+                    print("""That's completely fine.
+
+Let's skip this task for now and try the next one.""")
+                    time.sleep(3)
+                    clear()
+                    break
+                elif choice == "2":
+                    todo_list.remove(next_task)
+                    print(f"""{next_task} was removed from your list.
+
+Loading a new task.""")
+                    time.sleep(3)
+                    clear()
+                    break
+                elif choice == "3":
+                    agree = input("""
+Are you sure? This can not be reversed. (y/n)\n> """).lower() == "y"
+                    if agree:
+                        print("Goodbye!")
+                        time.sleep(3)
+                        clear()
+                        sys.exit(0)
+                else:
+                    print("Invalid input!")
+                    time.sleep(2)
+                    continue
+        elif completed == "0":
+            clear()
+            setup_menu()
         else:
-            print("---STILL A WORK IN PROGRESS---")
+            clear()
 
 
 def tasks_complete():
@@ -204,4 +254,3 @@ Now, would you like to set up a new To Do list? (y/n)\n> """).lower() == "y"
             time.sleep(3)
             clear()
             sys.exit(0)
-    return

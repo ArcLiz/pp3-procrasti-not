@@ -39,8 +39,7 @@ Add a new task below or chose from the alternatives above to proceed.""")
 
         elif action == '1':
             clear()
-            # to edit_tasks()
-            print("Testing edit tasks location")
+            edit_tasks()
 
         elif action == '2':
             clear()
@@ -56,10 +55,68 @@ Add a new task below or chose from the alternatives above to proceed.""")
             continue
 
 
-# def edit_tasks():
-# """
-# The menu in which users can edit or delete tasks from their list.
-# """
+def edit_tasks():
+    """
+    Function to manage tasks in the todo_list global variable
+    """
+    global todo_list
+
+    while True:
+        # Print the current list
+        print("BIG BOX TEXT")
+        for i, task in enumerate(todo_list):
+            print(f"{i+1}. {task}")
+
+        # Ask the user which index to edit or delete
+        index = int(input("""
+Enter the index of the task you want to edit or
+delete (0 to exit):\n> """)) - 1
+
+        # Exit if the user enters 0
+        if index == -1:
+            clear()
+            setup_menu()
+            break
+
+        # Ensure the index is valid
+        if index < 0 or index >= len(todo_list):
+            print("Invalid index, please try again.")
+            continue
+
+        # Ask the user whether to edit or delete the task
+        action = input("Do you want to (e)dit or (d)elete the task?\n> ")
+
+        if action == 'e':
+            # Edit the task
+            new_task = input("Enter the new task:\n> ")
+            todo_list[index] = new_task
+            clear()
+            print("BIG BOX TEXT")
+            print(f"Task {index+1} updated.")
+        elif action == 'd':
+            # Delete the task
+            del todo_list[index]
+            clear()
+            print("BIG BOX TEXT")
+            print(f"Task {index+1} deleted.")
+        else:
+            print("Invalid input, please try again.")
+            continue
+
+        # Print the updated list
+        print("\nUpdated To Do List:")
+        for i, task in enumerate(todo_list):
+            print(f"{i+1}. {task}")
+
+        # Ask the user whether to continue editing or exit
+        action = input("\nDo you want to continue editing tasks? (y/n)\n> ")
+        if action == 'y':
+            clear()
+            edit_tasks()
+        else:
+            clear()
+            setup_menu()
+            break
 
 
 # def task_manager():

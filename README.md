@@ -5,7 +5,7 @@ Procrasti-Not is your friendly neighbourhood bot for your procrastination misfor
 The app is developed in Python and presented in a web browser using the Code Institute Python Template which creates a mock terminal.<br><br>
 ![Multi-Mockup](docs/project_device_mockup.png)
 
-[View the project here](url-to-project) - *Please note: To open any links in this document in a new browser tab, please press CTRL + Click.*
+[View the project here](https://procrasti-not.herokuapp.com/) - *Please note: To open any links in this document in a new browser tab, please press CTRL + Click.*
 
 ## Table of Contents
 * [User Experience Design (UX)](#UX)
@@ -94,10 +94,9 @@ IMPLEMENTATION:
 ![Welcome](docs/02_welcome.png)
 * Once their name is entered, the app will generate a personalized message and display the main menu of the Task Manager app
 * The user is now given the option to read the app handbook or jump straight into setting up their To-Do list
-<br>
+
 ---
 
-<br>
 
 ```
 USER STORY:
@@ -112,10 +111,9 @@ The app contains a handbook, or a "beginners guide" that is easily accessible fr
 ![Handbook](docs/03_handbook.png)
 * Explains the purpose of the app
 * Explains the app functions
-<br>
+
 ---
 
-<br>
 
 ```
 USER STORY:
@@ -147,9 +145,9 @@ From the main menu option 1, the user is taken to the edit menu which provides u
 ![Edit Confirmation](docs/08_edit-confirmation.png)
 * Once the selected task has been edited or deleted, the user is prompted with a confirmation and a print out of the new and updated list
 * The user will then be asked whether they wish to continue to edit tasks or not, where choosing (n) will take the user back to the main menu again
-<br>
+
 ---
-<br>
+
 
 ```
 USER STORY:
@@ -173,9 +171,9 @@ The task manager is where the real work gets done. Once the user has added tasks
 * Should the user not complete the task, they are given options to temporarily skip the task, permanently skip the task (deleting it) or to quit the app all together
 * If the user chooses to quit the app, they are specifically asked to confirm this as shown below
 ![Task Manager Warning](docs/09_manager-quit.png)
-<br>
+
 ---
-<br>
+
 
 ```
 USER STORY:
@@ -184,6 +182,7 @@ As a user I want task completion to feel rewarding
 
 IMPLEMENTATION:
 ```
+
 ### Completion Screen
 Upon completing all tasks, the user will automatically be taken to a final screen as shown below.
 ![Final Screen](docs/10_finale.png)
@@ -191,9 +190,9 @@ Upon completing all tasks, the user will automatically be taken to a final scree
 * The completed tasks are listed
 * The user is prompted to choose to either start over with a new To Do list or to quit the app together
 * The quit app choice is _not_ followed by a confirmation in this case, as I didn't feel it that it was necessary at the end of the app
-<br>
+
 ---
-<br>
+
 
 ### Escape (0)
 
@@ -204,14 +203,7 @@ Upon completing all tasks, the user will automatically be taken to a final scree
   * As it stands, any name or list data that the user submits is forgotten as soon as the app/page is reloaded. I feel that the app could be more useful going forward if the app could get previously saved information for the user to easily "take up where they left off"
 
 ## Testing
-The project has been tested at every step of the project development, but I also asked friends and family to do detailed testing when the build was near completion. 
-
-The issues that were found during friends and family members testing were
-* A "0-escape" was missing from the menu the user enters upon confirming that they've _not_ completed a task
-* Of
-* Things
-
-All of which has been solved.
+The project has been tested at every step of the project development, but I also asked friends and family to do detailed testing when the build was near completion. The few issues and inconveniences that were found during this testing phase have all been solved.
 
 Upon project completion I have personally done extensive testing on every feature, as documented below. You can find the test document in it's entirety [here](https://docs.google.com/spreadsheets/d/1F_x43U3o0Q7jiaN1o71_HNXEbTof01x1Y1HkhxJOdME/edit?usp=sharing).
 
@@ -307,4 +299,4 @@ The project will now be on your local machine to use or save. This can be a good
 * Code to clear the terminal was found on [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 
 ### Acknowledgements
-* Daisy McGirr for being an epic mentor, as usual
+* Huge thanks to Daisy McGirr for being an epic mentor, as usual!

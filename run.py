@@ -2,6 +2,7 @@
 Main module including an initial welcome function,
 the user handbook and the main().
 """
+import time
 from colorama import Fore
 
 from utilities import clear
@@ -49,6 +50,7 @@ before we start setting up your To Do list?""" + Fore.CYAN + """ (y/n)
             break
         elif handbook == 'n':
             print('Great! Let us get started on building your "To Do - list".')
+            time.sleep(2)
             clear()
             break
         else:

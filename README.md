@@ -68,19 +68,18 @@ Below you'll find screenshots of the mockup layouts.
 ![Text Layouts](docs/textmockups.png)
 
 #### Chromatics
-Potential. WIP.
+During the development of the project, I realised that long white text blocks on black background makes it difficult to distinguish whether information is important or not. As such, I wanted to find a way to make promts and interactions stand out to increase usability. At project inception I was unaware of the fact that even terminal text can be colored, but I somehow stumbled upon a [forum post](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal) where this was discussed. 
 
+![Chromatics](docs/chromatics.png)
+
+The color scheme I chose for different levels of importance was loosely based on color psychology. Green was chosen for text that needs to "semi-stand out" to the user, as it is a calming and reassuring color that does not feel overly aggressive or attention-grabbing. Cyan, on the other hand, was chosen for text that needs to be of even higher importance, as it is a color that conveys professionalism, and a sense of importance. Finally, red was chosen for very important information, as it is a color that naturally draws attention and is commonly associated with warnings and danger.
 
 ## Features
 Names, screenshots and descriptions of all the features.
-### Project Wide Features
-e.g. Logo, Navigation Menu, Footer
-### Features per page (if relevant)
-e.g. Contact Form, About Section, Gallery
 
 ## Future Enhancements
 List of any features that should, could or might be implemented in the future.
-* Name of Feature
+* Ability to store user information (incl. task lists)
   * Description of Feature and reason for why it might be added
 
 ## Testing

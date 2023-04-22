@@ -96,6 +96,7 @@ IMPLEMENTATION:
 * The user is now given the option to read the app handbook or jump straight into setting up their To-Do list
 <br>
 ---
+
 <br>
 
 ```
@@ -113,6 +114,7 @@ The app contains a handbook, or a "beginners guide" that is easily accessible fr
 * Explains the app functions
 <br>
 ---
+
 <br>
 
 ```
@@ -124,6 +126,7 @@ IMPLEMENTATION:
 ```
 ### Main Menu
 The main menu is the central hub of the Task Manager app, providing users with access to all of the app's key features.
+
 ![Main Menu](docs/04_main-menu.png)
 * Users can add tasks to their list
 * Users can choose to enter the menu for editing/deleting existing tasks (1)
@@ -191,7 +194,6 @@ Upon completing all tasks, the user will automatically be taken to a final scree
 <br>
 ---
 <br>
-I chose to add 
 
 ### Escape (0)
 
@@ -202,31 +204,50 @@ I chose to add
   * As it stands, any name or list data that the user submits is forgotten as soon as the app/page is reloaded. I feel that the app could be more useful going forward if the app could get previously saved information for the user to easily "take up where they left off"
 
 ## Testing
-Documentation of all tests that has been done on the project.
-### Feature Testing
-![Excel Sheet of Tests](link/to/image)
+The project has been tested at every step of the project development, but I also asked friends and family to do detailed testing when the build was near completion. 
+
+The issues that were found during friends and family members testing were
+* A "0-escape" was missing from the menu the user enters upon confirming that they've _not_ completed a task
+* Of
+* Things
+
+All of which has been solved.
+
+Upon project completion I have personally done extensive testing on every feature, as documented below. You can find the test document in it's entirety [here](https://docs.google.com/spreadsheets/d/1F_x43U3o0Q7jiaN1o71_HNXEbTof01x1Y1HkhxJOdME/edit?usp=sharing).
+
+![Excel Sheet of Tests](docs/test1.png)
+![Excel Sheet of Tests](docs/test2.png)
 
 ### Validator Testing
-* Python Checker - The python code was evaluated u
-  * Outcome ![View Image of Report](link/to/image)
+* Python Checker - The python code was evaluated using the [CI Python Linter](https://pep8ci.herokuapp.com/) without any issues
 
+
+<details>
+  <summary>Results for run.py</summary>
+
+  ![View Image of Report](docs/run.py.png)
+</details>
+<details>
+  <summary>Results for tasks.py</summary>
+  
+  ![View Image of Report](docs/tasks.py.png)
+</details>
+  <details>
+  <summary>Results for utilities.py</summary>
+  
+  ![View Image of Report](docs/utilities.py.png)
+</details>
+<br>
 
 ### Notable Bugs
-#### Reported - Solved
-* Item 1
-* Item 2
-* Item 3
-
-#### Reported - Not Solved
-* Item 1
-* Item 2
-* Item 3
+There has not been any notable bugs that impact functionality during the development of the project. 
+<br>
 
 ## Deployment
 
 The project was deployed using Heroku. The steps to deploy are as follows:
 
-*Heroku Deployment - Project Creation and Settings*<br>
+#### **Heroku Deployment** - Project Creation and Settings<br>
 1. Sign up or Log in to [Heroku](https://heroku.com/)
 2. Once in your dashboard, select "New" and then "Create New App"
 3. Give your project a name (must be unique), select your region and confirm "create app"<br>
@@ -238,7 +259,7 @@ You'll now be taken to the Heroku Deployment Tab. In order to use the Code Insti
 6. Click "Add Buildpack" and add the packs **Python** and **NodeJS**
     * *Note that the order of added buildpacks have meaning. In this case, Python should be the first (top) and NodeJS second (bottom)*
 
-*Heroku Deployment - Deploying a Github Repository*<br>
+#### **Heroku Deployment** - Deploying a Github Repository<br>
 1. Navigate to the "Deployment" tab
 2. Select "GitHub - Connect" under Deployment method and follow the steps necessary to connect your GitHub account
 3. Select your GitHub account from the droplist, enter your repository name and click search
@@ -248,7 +269,7 @@ You'll now be taken to the Heroku Deployment Tab. In order to use the Code Insti
     * For manual, choose the branch you wish to deploy and click "Deploy Branch"
 6. Once Heroku is finished with the build process you will be notified with a "Your App Was Successfully Deployed" message and a link to the app
 
-*Forking the GitHub Repository*<br>
+#### **Forking** the GitHub Repository<br>
 
 If you wish to make a copy of the repository to your own GitHub account, you can do so by "Forking" it.<br>
 This will give you a full working copy of the project, but ensures that no changes you make affect the original repository.
@@ -257,7 +278,7 @@ This will give you a full working copy of the project, but ensures that no chang
 3. Chose the name you want to give your version of the repository *(automatically filled in as the original project name)*
 4. Click the green "Create fork" button
 
-*Cloning the GitHub Repository*<br>
+#### **Cloning** the GitHub Repository<br>
 
 If you wish to download a local version of the repository to be worked on, you can do that too. That is referred to as "Cloning".<br>
 The steps to cloning the repository are as follows:
@@ -274,17 +295,16 @@ The project will now be on your local machine to use or save. This can be a good
 
 ### Utilised Libraries
 
-- Built in - **os**
-- Built in - **sys**
-- Built in - **time**
-- Built in - **random**
+- **`os`**  <br>was imported to help clear the terminal, thus keeping the interface polished and distraction-free for the user
+- **`sys`**  <br>is used to close the app in an easy and seamless way
+- **`random`**  <br>helps the user pick a random task from their list. The function is also used to pick randome encouraging sentences to cheer the user on
+- **`time`**  <br>is merely used to give the user pause between screens, in the situations where I did not wish for user interaction
+- **`colorama`**  <br>was a game-changer, allowing me to make sure users read and interpret the text properly, easily and with enjoyment
 
 ### Code
-* Item 1
-* Item 2
-* Item 3
+* [Stack Overflow](https://stackoverflow.com/) has been browsed frequently in order to grow my understanding of Python in general
+* [Code Institute](https://codeinstitute.net/se/) and the course material has been crucial to develop this project<br><br>
+* Code to clear the terminal was found on [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 
 ### Acknowledgements
-Individuals worthy of special mention.
-* Person 1 - For...
-* Person 2 - For...
+* Daisy McGirr for being an epic mentor, as usual

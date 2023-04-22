@@ -5,6 +5,8 @@ and presents the user with a quick app introduction
 import os
 
 
+# Code found in forum post:
+# https://stackoverflow.com/questions/2084508/clear-terminal-in-python
 def clear():
     """
     Clearing the terminal to reduce

@@ -40,11 +40,13 @@ What would you like me to call you?""" + Fore.RESET + "\n> ")
 |                           ..a friend!                             |
 |___________________________________________________________________|""")
 
-    while True:
-        handbook = input(Fore.GREEN + """
+    print(f"""{Fore.GREEN}
 Do you want to know more about the services I can offer you
-before we start setting up your To Do list?""" + Fore.CYAN + """ (y/n)
-""" + Fore.RESET + "> ").lower()
+before we start setting up your To Do list? {Fore.CYAN} (y/n)
+""" + Fore.RESET)
+
+    while True:
+        handbook = input("> ").lower()
         if handbook == 'y':
             display_handbook()
             break
@@ -54,9 +56,9 @@ before we start setting up your To Do list?""" + Fore.CYAN + """ (y/n)
             clear()
             break
         else:
-            print(Fore.RED + "Invalid input, please enter 'y' or 'n" + """
-> """ + Fore.RESET)
-
+            print(f"{Fore.RED}Invalid input!{Fore.RESET}")
+            time.sleep(2)
+    clear()
     setup_menu()
 
 
@@ -66,7 +68,7 @@ def display_handbook():
     """
     clear()
 
-    print(Fore.RESET + """\
+    print(f"""{Fore.RESET}\
  ___________________________________________________________________
 |                                                                   |
 |            A Beginners Guide to Sir Procrasti - Not               |
@@ -90,7 +92,7 @@ def display_handbook():
 |                           Good Luck!                              |
 |___________________________________________________________________|
 """)
-    input(Fore.GREEN + "Press enter to begin.." + Fore.RESET)
+    input(f"{Fore.GREEN}Press enter to begin..{Fore.RESET}")
     clear()
     setup_menu()
 

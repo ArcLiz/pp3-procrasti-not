@@ -6,6 +6,8 @@ import time
 import random
 import sys
 
+from colorama import Fore
+
 from utilities import MANAGER_HEADER, MANAGER_EMPTY, encouragement_choices
 from utilities import clear, MAIN_MENU, EDIT_HEADER, COMPLETED_HEADER
 from utilities import MANAGER_ENCOURAGE
@@ -21,8 +23,7 @@ def setup_menu():
     """
     global todo_list
     first_time = True
-    menu_text = f"""{MAIN_MENU}
-
+    menu_text = f"{MAIN_MENU}" + Fore.GREEN + """
 Choose from the below alternatives:
 1. View, Edit or Delete tasks in my list
 2. Start working through my tasks\n"""
@@ -31,7 +32,7 @@ Choose from the below alternatives:
         if first_time:
             print(f"""{menu_text}
 Or add a new task to your list by writing it below.
-e.g. 'Do the dishes'""")
+e.g. 'Do the dishes'""" + Fore.RESET)
             first_time = False
 
         action = input('> ')
@@ -53,9 +54,11 @@ Add a new task below or chose from the alternatives above to proceed.""")
         else:
             todo_list.append(action)
             clear()
-            print(f"""{menu_text}
-{action} was added to your list.
-Add a new task below or chose from the alternatives above to proceed.""")
+            print(f"""
+{menu_text}
+""" + Fore.CYAN + f"{action}" + Fore.GREEN + """ was added to your list.
+Add a new task below or choose from the alternatives above to proceed.
+""" + Fore.RESET)
             continue
 
 
@@ -73,11 +76,12 @@ def edit_tasks():
 
         # Ask the user which index to edit or delete
         try:
-            index = int(input("""
+            index = int(input(Fore.GREEN + """
 Enter the index of the task you want to edit or
-delete (0 to exit):\n> """)) - 1
+delete""" + Fore.CYAN + " (0 to exit)" + Fore.RESET + "\n>")) - 1
         except ValueError:
-            print("Invalid input, please enter a valid index.")
+            print(Fore.RED + """
+Invalid input, please enter a valid index.""" + Fore.RESET)
             time.sleep(2)
             clear()
             continue
@@ -90,30 +94,37 @@ delete (0 to exit):\n> """)) - 1
 
         # Ensure the index is valid
         if index < 0 or index >= len(todo_list):
-            print("Invalid index, please try again.")
+            print(Fore.RED + """
+Invalid index, please try again.""" + Fore.RESET)
+            time.sleep(2)
+            clear()
             continue
 
         # Ask the user whether to edit or delete the task
-        action = input("Do you want to (e)dit or (d)elete the task?\n> ")
+        first = Fore.GREEN + "Do you want to " + Fore.CYAN
+        second = Fore.GREEN + "dit or " + Fore.CYAN
+        third = Fore.GREEN + "elete the task?" + Fore.RESET
+        action = input(first + "(e)" + second + "(d)" + third + "\n> ")
 
         if action == 'e':
             # Edit the task
-            new_task = input("Enter the new task:\n> ")
+            new_task = input(Fore.GREEN + """Enter the new task:
+""" + Fore.RESET + "> ")
             todo_list[index] = new_task
             clear()
             print(EDIT_HEADER)
-            print(f"Task {index+1} updated.")
+            print(Fore.CYAN + f"Task {index+1} updated." + Fore.RESET)
         elif action == 'd':
             # Delete the task
             del todo_list[index]
             clear()
             print(EDIT_HEADER)
-            print(f"Task {index+1} deleted.")
+            print(Fore.CYAN + f"Task {index+1} deleted." + Fore.RESET)
         elif action == '0':
             clear()
             setup_menu()
         else:
-            print("Invalid input, please try again.")
+            print(Fore.RED + "Invalid input, please try again." + Fore.RESET)
             continue
 
         # Print the updated list
@@ -122,7 +133,9 @@ delete (0 to exit):\n> """)) - 1
             print(f"{i+1}. {task}")
 
         # Ask the user whether to continue editing or exit
-        action = input("\nDo you want to continue editing tasks? (y/n)\n> ")
+        action = input(Fore.GREEN + """
+Do you want to continue editing tasks?""" + Fore.CYAN + """ (y/n)
+""" + Fore.RESET + "> ")
         if action == 'y':
             clear()
             edit_tasks()
@@ -151,21 +164,24 @@ The task chosen is....""")
         if todo_list:
             next_task = random.choice(todo_list)
 
-            print(f"""\n{next_task}\n
-Once done, you have {len(todo_list)-1} tasks left to complete.\n""")
+            print(Fore.CYAN + f"""\n{next_task}
+""" + Fore.RESET + f"""
+Once done, you have {len(todo_list)-1} tasks left to complete.""")
         else:
             clear()
             print(MANAGER_EMPTY)
             input("""In order to start working through your To do list,
 you'll need to go back to my main menu and start adding tasks.
-
-Press enter to go back and setup your To Do list.""")
+""" + Fore.GREEN + """
+Press enter to go back and setup your To Do list.""" + Fore.RESET)
             clear()
             setup_menu()
             break
 
         # Mark a task as completed and add to completed_list
-        completed = input("Have you completed this task? (y/n)\n> ").lower()
+        completed = input(Fore.GREEN + """
+Have you completed this task?""" + Fore.CYAN + """ (y/n)
+""" + Fore.RESET + "> ").lower()
 
         if completed == "y":
             todo_list.remove(next_task)
@@ -194,12 +210,11 @@ Oof, come on my friend!
 You can do it, I'm completely sure of it.
 
 All I can offer at this point are these alternatives
-
+""" + Fore.GREEN + """
 1. Temporarily skip this task (shuffle new)
 2. Permanently skip this task (delete)
 3. Quit ProcrastiNot
-
-Which one suits you best?""")
+""" + Fore.RESET + "Which one suits you best?\n> ")
                 
                 choice = input("> ")
                 if choice == "1":
@@ -213,17 +228,19 @@ Let's skip this task for now and try the next one.""")
                     break
                 elif choice == "2":
                     todo_list.remove(next_task)
-                    print(f"""{next_task} was removed from your list.
+                    print(Fore.CYAN + f"""
+{next_task} was removed from your list.
 
-Loading a new task.""")
+""" + Fore.RESET + "Loading a new task..""")
                     time.sleep(3)
                     clear()
                     break
                 elif choice == "3":
-                    agree = input("""
-Are you sure? This can not be reversed. (y/n)\n> """).lower() == "y"
+                    agree = input(Fore.RED + """
+Are you sure? This can not be reversed. """ + Fore.CYAN + """(y/n)
+""" + Fore.RESET + "> ").lower() == "y"
                     if agree:
-                        print("Goodbye!")
+                        print(Fore.YELLOW + "Goodbye!" + Fore.RESET)
                         time.sleep(3)
                         clear()
                         sys.exit(0)
@@ -231,7 +248,7 @@ Are you sure? This can not be reversed. (y/n)\n> """).lower() == "y"
                     clear()
                     setup_menu()
                 else:
-                    print("Invalid input!")
+                    print(Fore.RED + "Invalid input!" + Fore.RESET)
                     time.sleep(2)
                     continue
         elif completed == "0":
@@ -256,8 +273,9 @@ def tasks_complete():
     print("\nYou should be as proud of yourself as I am.")
 
     while True:
-        up_next = input("""
-Now, would you like to set up a new To Do list? (y/n)\n> """).lower()
+        up_next = input(Fore.GREEN + """
+Now, would you like to set up a new To Do list? """ + Fore.CYAN + """(y/n)
+""" + Fore.RESET + "> ").lower()
 
         if up_next == "y":
             completed_tasks = []
@@ -268,7 +286,7 @@ Now, would you like to set up a new To Do list? (y/n)\n> """).lower()
             clear()
             setup_menu()
         else:
-            print("Goodbye!")
+            print(Fore.MAGENTA + "Goodbye!" + Fore.RESET)
             time.sleep(3)
             clear()
             sys.exit(0)

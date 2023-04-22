@@ -13,7 +13,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-MAIN_MENU = """
+MAIN_MENU = """\
  ___________________________________________________________________
 |                                                                   |
 |            Welcome to Sir Procrasti-Not's Main Menu               |
@@ -29,7 +29,7 @@ MAIN_MENU = """
 """
 
 
-MANAGER_HEADER = """
+MANAGER_HEADER = """\
  ___________________________________________________________________
 |                                                                   |
 |                    Hocus Pocus, give us Focus!                    |
@@ -44,7 +44,7 @@ MANAGER_HEADER = """
 """
 
 
-MANAGER_EMPTY = """
+MANAGER_EMPTY = """\
  ___________________________________________________________________
 |                                                                   |
 |                    Something went wrong!                          |
@@ -54,7 +54,7 @@ MANAGER_EMPTY = """
 """
 
 
-MANAGER_ENCOURAGE = """
+MANAGER_ENCOURAGE = """\
  ___________________________________________________________________
 |                                                                   |
 |                       We must remedy this!                        |
@@ -64,7 +64,7 @@ MANAGER_ENCOURAGE = """
 """
 
 
-EDIT_HEADER = """
+EDIT_HEADER = """\
  ___________________________________________________________________
 |                                                                   |
 |                        Bippety Boppety Boop                       |
@@ -76,7 +76,7 @@ EDIT_HEADER = """
 """
 
 
-COMPLETED_HEADER = """
+COMPLETED_HEADER = """\
  ___________________________________________________________________
 |                                                                   |
 |            Congratulations on completing your tasks!              |

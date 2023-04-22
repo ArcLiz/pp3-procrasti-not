@@ -79,7 +79,7 @@ def edit_tasks():
         try:
             index = int(input(f"""{Fore.GREEN}
 Enter the index of the task you want to edit or
-delete {Fore.CYAN}(0 to exit){Fore.RESET}"\n> """)) - 1
+delete {Fore.CYAN}(0 to exit){Fore.RESET}\n> """)) - 1
         except ValueError:
             print(f"""{Fore.RED}
 Invalid input, please enter a valid index.{Fore.RESET}""")

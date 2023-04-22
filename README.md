@@ -75,12 +75,124 @@ During the development of the project, I realised that long white text blocks on
 The color scheme I chose for different levels of importance was loosely based on color psychology. Green was chosen for text that needs to "semi-stand out" to the user, as it is a calming and reassuring color that does not feel overly aggressive or attention-grabbing. Cyan, on the other hand, was chosen for text that needs to be of even higher importance, as it is a color that conveys professionalism, and a sense of importance. Finally, red was chosen for very important information, as it is a color that naturally draws attention and is commonly associated with warnings and danger.
 
 ## Features
-Names, screenshots and descriptions of all the features.
+All app features are created with the user story
+`"As a user I want an app that makes managing my tasks efficiently easier"` in mind, as it is the basis of the entire project. However, I will specify the other features and the implementation of the requested functions below.
+<br>
+
+```
+USER STORY:
+
+As a user I want the app to feel friendly, helpful and personalized
+
+IMPLEMENTATION:
+```
+### First hello
+![App Start](docs/01_welcome.png)
+* When the app is launched, the user is greeted by a friendly message with an ASCII emoji, inviting them to enter their name to proceed
+* This feature adds a fun and engaging touch to the app, making it more welcoming for users and providing a positive first impression
+
+### Welcome Screen
+![Welcome](docs/02_welcome.png)
+* Once their name is entered, the app will generate a personalized message and display the main menu of the Task Manager app
+* The user is now given the option to read the app handbook or jump straight into setting up their To-Do list
+<br>
+---
+<br>
+
+```
+USER STORY:
+
+As a user I want clear instructions about the app functions
+
+IMPLEMENTATION:
+```
+
+### User Handbook
+The app contains a handbook, or a "beginners guide" that is easily accessible from the first welcome screen.
+![Handbook](docs/03_handbook.png)
+* Explains the purpose of the app
+* Explains the app functions
+<br>
+---
+<br>
+
+```
+USER STORY:
+
+As a user I want to be able to view, edit, add and delete tasks
+
+IMPLEMENTATION:
+```
+### Main Menu
+The main menu is the central hub of the Task Manager app, providing users with access to all of the app's key features.
+![Main Menu](docs/04_main-menu.png)
+* Users can add tasks to their list
+* Users can choose to enter the menu for editing/deleting existing tasks (1)
+* Users can jump into the task manager (2)
+
+![Main Menu Reload](docs/05_main-reload.png)
+* When a user adds a task to their To Do-list, the screen is reloaded to clearly show what task was added and what the user options are currently
+
+### Edit Menu
+From the main menu option 1, the user is taken to the edit menu which provides users with a way to update or remove existing tasks from their To Do-list
+![Edit Menu](docs/06_edit-menu.png)
+* The user is prompted to choose the index of the task they wish to target
+
+![Edit Choice](docs/07_edit-choice.png)
+* The user is then prompted to select whether they wish to (e)dit or (d)elete the selected task
+* If the user chooses to edit the task, they will be prompted to write the task anew, in actuality replacing one task with another
+
+![Edit Confirmation](docs/08_edit-confirmation.png)
+* Once the selected task has been edited or deleted, the user is prompted with a confirmation and a print out of the new and updated list
+* The user will then be asked whether they wish to continue to edit tasks or not, where choosing (n) will take the user back to the main menu again
+<br>
+---
+<br>
+
+```
+USER STORY:
+
+* As a user I want help with choosing which task to perform
+* As a user I want to see how many tasks remain
+
+IMPLEMENTATION:
+```
+### Task Manager
+The task manager is where the real work gets done. Once the user has added tasks to their task list, they can jump into the task manager by selecting option 2 from the main menu.
+![Task Manager](docs/09_manager-main.png)
+* The task manager will automatically choose a task from the users To Do-list at random
+* The user is informed of how many tasks remain in the list once they have completed the chosen task
+* The user is prompted to answer whether the task has been completed or not
+
+![Task Manager Options](docs/09_manager-option-y.png)
+* If the user has completed the task, they are given a random encouragement while waiting for the next task to be selected
+
+![Task Manager Options](docs/09_manager-option-n.png)
+* Should the user not complete the task, they are given options to temporarily skip the task, permanently skip the task (deleting it) or to quit the app all together
+* If the user chooses to quit the app, they are specifically asked to confirm this as shown below
+![Task Manager Warning](docs/09_manager-quit.png)
+<br>
+---
+<br>
+
+```
+USER STORY:
+
+As a user I want task completion to feel rewarding
+
+IMPLEMENTATION:
+```
+### Completion Screen
+Upon completing all tasks, the user will automatically be taken to a final screen as shown below.
+![Final Screen](docs/10_finale.png)
+* The user is congratulated on a job well done
+* The completed tasks are listed
+* The user is prompted to choose to either start over with a new To Do list or to quit the app together
+* The quit app choice is _not_ followed by a confirmation in this case, as I didn't feel it that it was necessary at the end of the app
 
 ## Future Enhancements
-List of any features that should, could or might be implemented in the future.
 * Ability to store user information (incl. task lists)
-  * Description of Feature and reason for why it might be added
+  * As it stands, any name or list data that the user submits is forgotten as soon as the app/page is reloaded. I feel that the app could be more useful going forward if the app could get previously saved information for the user to easily "take up where they left off"
 
 ## Testing
 Documentation of all tests that has been done on the project.

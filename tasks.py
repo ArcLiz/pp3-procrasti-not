@@ -109,6 +109,9 @@ delete (0 to exit):\n> """)) - 1
             clear()
             print(EDIT_HEADER)
             print(f"Task {index+1} deleted.")
+        elif action == '0':
+            clear()
+            setup_menu()
         else:
             print("Invalid input, please try again.")
             continue
@@ -123,6 +126,9 @@ delete (0 to exit):\n> """)) - 1
         if action == 'y':
             clear()
             edit_tasks()
+        elif action == '0':
+            clear()
+            setup_menu()    
         else:
             clear()
             setup_menu()
@@ -221,6 +227,9 @@ Are you sure? This can not be reversed. (y/n)\n> """).lower() == "y"
                         time.sleep(3)
                         clear()
                         sys.exit(0)
+                elif choice == "0":
+                    clear()
+                    setup_menu()
                 else:
                     print("Invalid input!")
                     time.sleep(2)
@@ -248,13 +257,16 @@ def tasks_complete():
 
     while True:
         up_next = input("""
-Now, would you like to set up a new To Do list? (y/n)\n> """).lower() == "y"
+Now, would you like to set up a new To Do list? (y/n)\n> """).lower()
 
-        if up_next:
+        if up_next == "y":
             completed_tasks = []
             clear()
             setup_menu()
             break
+        elif up_next == "0":
+            clear()
+            setup_menu()
         else:
             print("Goodbye!")
             time.sleep(3)

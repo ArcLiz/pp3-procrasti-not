@@ -10,7 +10,6 @@ The app is developed in Python and presented in a web browser using the Code Ins
 ## Table of Contents
 * [User Experience Design (UX)](#UX)
     * [Strategy](#strategy)
-      * [Site Goals](#Site-Goals)
       * [User Stories](#User-Stories)
     * [Scope](#scope)
     * [Structure](#structure)
@@ -189,6 +188,14 @@ Upon completing all tasks, the user will automatically be taken to a final scree
 * The completed tasks are listed
 * The user is prompted to choose to either start over with a new To Do list or to quit the app together
 * The quit app choice is _not_ followed by a confirmation in this case, as I didn't feel it that it was necessary at the end of the app
+<br>
+---
+<br>
+I chose to add 
+
+### Escape (0)
+
+* Due to the app having multiple sub menus and locations, I felt that it was necessary to add a sort of "fail safe escape" from all places where the user is prompted to input information. Therefore, submitting 0 will always take the user back to the Main Menu
 
 ## Future Enhancements
 * Ability to store user information (incl. task lists)
